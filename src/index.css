@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  min-height: 100vh;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  background-image: radial-gradient(ellipse at top left, #7f50e4, #4c05d0);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: #e6ddf9;
+}
+h1{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color:antiquewhite;
+  
+}
+.container {
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo cột */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  height: 100vh; /* Đặt chiều cao của container bằng chiều cao toàn màn hình */
+  text-align: center; /* Căn giữa nội dung bên trong nếu cần */
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 20px; /* Khoảng cách giữa tiêu đề và menu */
+}
+
+.menu {
+  /* Bất kỳ style thêm nào cho menu */
+}
+
+/* Điều chỉnh tiêu đề cho App nếu cần */
+.title h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
