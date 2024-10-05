@@ -4,7 +4,7 @@ function Post({name, comment}){
     return(
         <main>
          <div className={Style.post} >
-            <h5>Your post</h5>
+            <h5>Your Pst</h5>
             <p className={Style.comment}>{comment}</p>
             <h5>Your Namn</h5>
             <p className={Style.name}>{name}</p>

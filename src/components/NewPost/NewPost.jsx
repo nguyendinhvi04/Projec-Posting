@@ -3,12 +3,14 @@ import { useState } from 'react';
 function NewPost({ onCancel, onAddPost }) {
   const [enteredBody, setEnteredBody] = useState('');
   const [enteredAuthor, setEnterAuthor] = useState('');
+  // Firstly, 2 variable get event when the user entered after its save on postdata 
   function changeBodyHandler(event) {
     setEnteredBody(event.target.value);
   }
   function changeAuthorHandler(event) {
     setEnterAuthor(event.target.value);
   }
+  // Submit form to PostList
   function submitHandler(event) {
     event.preventDefault();
     const postData = {
