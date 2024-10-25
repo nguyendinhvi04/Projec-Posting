@@ -1,24 +1,30 @@
-import './index.css';
 import { useState } from 'react';
-import PostList from './components/PostList/PostList.jsx';
-import MenuListProduct from './MenuListProduct.jsx';
-import MainHeader from './components/MainHeader/MainHeader.jsx'
-import Cart from './Cart';
+
+import PostsList from './components/PostList/PostList.jsx';
+import MainHeader from './components/MainHeader/MainHeader.jsx';
+
 function App() {
-   const [modalIsVisible, setModalIsVisible] = useState(false);
-   function hiddenModalHandler() {
-      setModalIsVisible(false);
-   }
-   function showModalHandler() {
-      setModalIsVisible(true);
-   }
-   return (
+  const [modalIsVisible, setModalIsVisible] = useState(false);
+
+  function showModalHandler() {
+    setModalIsVisible(true);
+  }
+
+  function hideModalHandler() {
+    setModalIsVisible(false);
+  }
+
+  return (
+    <>
+      <MainHeader onCreatePost={showModalHandler} />
       <main>
-         <h1>VILAND Post</h1>
-         <h4>Begin new post of you</h4>
-         <MainHeader onCreatePost={showModalHandler} />
-         <PostList isPosting={modalIsVisible} onStopPosting={hiddenModalHandler} />
+        <PostsList
+          isPosting={modalIsVisible}
+          onStopPosting={hideModalHandler}
+        />
       </main>
-   )
+    </>
+  );
 }
+
 export default App;

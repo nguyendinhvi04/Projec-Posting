@@ -1,4 +1,4 @@
-import classes from '/home/dev/Documents/NextJs/starting-project/src/components/MainHeader/MainHeader.module.css';
+import classes from './MainHeader.module.css';
 import { MdPostAdd, MdMessage } from 'react-icons/md';
    function MainHeader ({onCreatePost}){
     return(

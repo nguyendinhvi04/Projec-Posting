@@ -1,41 +1,47 @@
-import classes from './NewPost.module.css';
 import { useState } from 'react';
+
+import classes from './NewPost.module.css';
+
 function NewPost({ onCancel, onAddPost }) {
   const [enteredBody, setEnteredBody] = useState('');
-  const [enteredAuthor, setEnterAuthor] = useState('');
-  // Firstly, 2 variable get event when the user entered after its save on postdata 
-  function changeBodyHandler(event) {
+  const [enteredAuthor, setEnteredAuthor] = useState('');
+
+  function bodyChangeHandler(event) {
     setEnteredBody(event.target.value);
   }
-  function changeAuthorHandler(event) {
-    setEnterAuthor(event.target.value);
+
+  function authorChangeHandler(event) {
+    setEnteredAuthor(event.target.value);
   }
-  // Submit form to PostList
+
   function submitHandler(event) {
     event.preventDefault();
     const postData = {
-      comment: enteredBody,
-      name: enteredAuthor
+      body: enteredBody,
+      author: enteredAuthor
     };
     onAddPost(postData);
     onCancel();
   }
+
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <p>
-        <label htmlFor="body" className={classes.label}>Your post </label>
-        <textarea id="body" className={classes.textarea} required rows={4} onChange={changeBodyHandler} />
+        <label htmlFor="body">Text</label>
+        <textarea id="body" required rows={3} onChange={bodyChangeHandler} />
       </p>
       <p>
-        <label htmlFor="name" className={classes.label}>Your name</label>
-        <input type="text" className={classes.input} id="name" required onChange={changeAuthorHandler} />
+        <label htmlFor="name">Your name</label>
+        <input type="text" id="name" required onChange={authorChangeHandler} />
       </p>
       <p className={classes.actions}>
-        <button type="button" onClick={onCancel}>Cancel</button>
-        <button >Submit</button>
-
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
+        <button>Submit</button>
       </p>
     </form>
   );
 }
+
 export default NewPost;

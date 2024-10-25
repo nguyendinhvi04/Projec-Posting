@@ -1,15 +1,12 @@
-import Style from '/home/dev/Documents/NextJs/starting-project/src/components/Post/Post.module.css'
-function Post({name, comment}){
-    // const {name, comment} = data;
-    return(
-        <main>
-         <div className={Style.post} >
-            <h5>Your Pst</h5>
-            <p className={Style.comment}>{comment}</p>
-            <h5>Your Namn</h5>
-            <p className={Style.name}>{name}</p>
-           </div>
-        </main>    
-    )
+import classes from './Post.module.css';
+
+function Post({ author, body }) {
+  return (
+    <li className={classes.post}>
+      <p className={classes.author}>{author}</p>
+      <p className={classes.text}>{body}</p>
+    </li>
+  );
 }
+
 export default Post;
