@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react';
-
 import Post from '/home/dev/Documents/NextJs/starting-project/src/components/Post/Post.jsx';
-import NewPost from '/home/dev/Documents/NextJs/starting-project/src/components/NewPost/NewPost.jsx';
-import Modal from '/home/dev/Documents/NextJs/starting-project/src/components/Modal/Modal.jsx';
 import classes from './PostList.module.css';
-
-function PostsList({ isPosting, onStopPosting }) {
+function PostsList() {
   const [posts, setPosts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 
@@ -34,11 +30,6 @@ function PostsList({ isPosting, onStopPosting }) {
 
   return (
     <>
-      {isPosting && (
-        <Modal onClose={onStopPosting}>
-          <NewPost onCancel={onStopPosting} onAddPost={addPostHandler} />
-        </Modal>
-      )}
       {!isFetching && posts.length > 0 && (
         <ul className={classes.posts}>
           {posts.map((post) => (
